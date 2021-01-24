@@ -1,0 +1,134 @@
+{% extends "main.html" %}
+
+{% block dt %}
+<script>
+//reset type=date inputs to text
+  $( document ).bind( "mobileinit", function(){
+    $.mobile.page.prototype.options.degradeInputs.date = false;
+  });	
+</script>
+
+<div id="datepicker"></div>
+ 
+<script>
+$( "#datepicker" ).datepicker();
+</script>
+
+
+
+{% endblock %}
+
+{% block content %}
+ <div data-role="collapsibleset" data-theme="a" data-content-theme="a"  data-mini="a">   
+     <h3 class="ui-btn ui-icon-calendar ui-btn-icon-left">Календарь</h3>
+	 <div id="datepicker"></div>
+    <form action="#" method="POST">
+        <div data-role="fieldcontain">
+         <input data-role="date" data-inline="true" type="text" name="date"  size="20" maxlength="10"/>
+         <input type="submit" value="Перейти" data-role='button' data-inline="true"  data-mini="true">  
+         <input type="submit" value="<" name='prev' data-role='button' data-inline="true"  data-mini="true">
+         <input type="submit" value=">" name='next' data-role='button' data-inline="true"  data-mini="true">
+        </div> 
+     </form>    
+
+</div>
+
+<div data-role="collapsibleset" data-theme="a" data-content-theme="a" class="ui-btn ui-icon-usd "  data-mini="true"> 
+<!--     <h3>{{ chead|safe}}</h3> -->
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true" data-collapsed="false">
+        <h3>ПАТ "ПІВДЕННИЙ"</h3>
+{{ bank_id_3|safe }}
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true" data-collapsed="false">
+    <h3>Контировка</h3>
+    <table cellpadding="0" cellspacing="0" border="0"  id="id_3" width="100%" data-role="table"   class="ui-responsive table-stroke">
+        <thead>
+            <tr>
+               <th width=10%>Контрагент</th>
+               <th width=50%>Примечание</th>
+               <th width=20%>Приход</th>
+               <th width=20%>Расход</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{ ext_id_3|safe}}
+        </tbody>
+    </table>
+</div>
+<p>
+</div>
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true">
+        <h3>АТ "БАНК АЛЬЯНС" (Расчетный UAN)</h3>
+    {{ bank_id_2|safe }}
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true" data-collapsed="false">
+    <h3>Контировка</h3>
+    <table cellpadding="0" cellspacing="0" border="0" id="id_2" width="100%" data-role="table"  data-mode="reflow" class="ui-responsive table-stroke">
+        <thead>
+            <tr>
+               <th width=10%>Контрагент</th>
+               <th width=50%>Примечание</th>
+               <th width=20%>Приход</th>
+               <th width=20%>Расход</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{ ext_id_2|safe}}
+        </tbody>
+    </table>
+</div>
+<p>
+</div>
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true">
+        <h3>ПАТ "ВБР"</h3>
+    {{ bank_id_4|safe }}
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true" data-collapsed="false">
+    <h3>Контировка</h3>
+    <table cellpadding="0" cellspacing="0" border="0"  id="id_4" width="100%" data-role="table"  data-mode="reflow" class="ui-responsive table-stroke">
+        <thead>
+            <tr>
+               <th width=10%>Контрагент</th>
+               <th width=50%>Примечание</th>
+               <th width=20%>Приход</th>
+               <th width=20%>Расход</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{ ext_id_4|safe}}
+        </tbody>
+    </table>
+</div>
+<p>
+</div>
+
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true">
+        <h3>Основная касса (грн)</h3>
+    {{ bank_id_0|safe }}
+<div data-role="collapsible" data-theme="a" data-content-theme="a"  data-mini="true" data-collapsed="false">
+    <h3>Контировка</h3>
+    <table cellpadding="0" cellspacing="0" border="0"  id="id_0" width="100%" data-role="table"  data-mode="reflow" class="ui-responsive table-stroke">
+        <thead>
+            <tr>
+               <th width=10%>Контрагент</th>
+               <th width=50%>Примечание</th>
+               <th width=20%>Приход</th>
+               <th width=20%>Расход</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{ ext_id_0|safe}}
+        </tbody>
+    </table>
+</div>
+<p>
+</div>
+
+</div>
+<div class='wide'>
+</div>
+{{ content | safe }}
+
+{% endblock %}

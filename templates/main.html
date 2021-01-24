@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABZ uInformed&trade; 3</title>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="/static/css/main.css/">
+	<link rel="stylesheet" href="/static/js/jquery-mobile-1.4.5/jquery.mobile.theme-1.4.5.min.css" />
+	<link rel="stylesheet" href="/static/js/jquery-mobile-1.4.5/jquery.mobile.icons-1.4.5.min.css" />
+	<link rel="stylesheet" href="/static/js/jquery-mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+
+<script src="/static/js/jquery/jquery-2.2.4.min.js"></script>
+<script src="/static/js/jquery-mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+<!-- <link rel="stylesheet" href="/static/js/datatables/datatables.min.css">
+<script type="text/javascript" language="javascript" src="/static/js/datatables/datatables.min.js"></script> -->
+
+<script type="text/javascript">
+$(document).bind("mobileinit", function () {
+    $.mobile.ajaxEnabled = false;
+    $.mobile.touchOverflowEnabled = false;
+    $.mobile.loadingMessage = "Загрузка";
+
+});
+</script>
+
+<script>
+$('#openAll').on('click', function() {
+    $('.openMe').trigger('expand');
+});
+$('#closeAll').on('click', function() {
+    $('.openMe').trigger('collapse');
+});
+ </script>
+ 
+<script>
+$( document ).bind( "mobileinit", function(){
+    $.mobile.collapsible.prototype.options.collapsedIcon = "arrow-d";
+});
+</script>
+
+
+<script>
+function refreshPage() {
+  $.mobile.changePage(
+    window.location.href,
+    {
+      allowSamePageTransition : false,
+      transition              : 'none',
+      showLoadMsg             : true,
+      reloadPage              : true
+    }
+  );
+}
+</script>
+
+{% block dt %}
+
+
+
+{% endblock %}
+
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+    <div  data-role="header" data-position="inline" data-theme="a"> 
+
+        <h2>{{title|safe}} {{summary|safe}}</h2><br>
+    <div data-role="navbar">   
+    <ul>
+        <li><a href="/bank" class="ui-btn ui-icon-bullets ui-btn-icon-left">Счета</a></li>
+        <li><a href="/monitor" class="ui-btn ui-icon-info ui-btn-icon-left">Монитор</a></li>
+    </ul>
+    </div><!-- /navbar -->    
+    </div> 
+        <div id="contentwrap">
+        <div id="content">
+<div data-role="content">
+
+
+{% block page %}
+    {% block content %}
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li style="color: red;">{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+        {{ content| safe }}
+
+
+    {% endblock %}
+{% endblock %}
+</div>
+        </div>
+        </div>
+
+<div id="footer">
+<div data-role="footer" data-grid="a" data-theme="a">
+    <h3>
+    {{footer|safe}}
+    </h3>
+</div>
+    </div>
+    	<!-- <div class="ui-loader-background"> </div> -->
+</body>
+</html>

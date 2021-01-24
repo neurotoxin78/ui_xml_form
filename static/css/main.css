@@ -1,0 +1,163 @@
+
+html {
+
+}
+
+a
+{
+padding: 0.5em 0.75em 0.5em 0.75em;
+vertical-align: middle;
+}
+
+
+img
+{
+padding: 0.5em 0.75em 0.5em 0.75em;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0.5em 0.5em;
+}
+
+li
+{
+    list-style-type: none;
+}
+
+.info {
+    float: right;
+    padding: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    vertical-align:middle;
+    color: red;
+    }
+
+.infoimg {
+    float: right;
+    display: block;
+}
+
+p {
+    padding: 1px;
+    font-size: 14px;
+    text-align: left;
+    vertical-align:middle;
+}
+
+
+
+.wide { min-width: 100%; 
+margin-top: 20px;
+        display: inline-block; 
+        padding-left: 10px; 
+}
+
+
+#wrapper {
+    margin: auto;
+
+}
+
+#headerwrap {
+    float: none;
+    margin: 0 auto;
+}
+
+#header {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+}
+
+#contentwrap {
+  margin-left:auto;
+  margin-right:auto;
+    margin-top: 5px;
+    border:none 1px #000000;
+    width: 99%; height: 80%;
+}
+
+#content {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color:#4D4D4D;
+    margin: 1px;
+    resize: both;
+    width: 100%;
+}
+
+
+.bank_summary_head_main {
+font-size: 14px;
+   color:#3b70a3;
+      float: left;
+display:inline-block;
+   font-weight: bold;
+  padding: 3px;
+    text-align: center;
+   vertical-align:middle;
+}
+
+
+#dp, #sum{
+    margin-right:10px;
+    float:left;
+}
+.child_div_1{
+    float:left;
+    margin-left:10px;
+    font-size: 16px;
+    color: #aaaaaa;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: text-top;
+}
+
+
+
+
+hr {
+  border: 0;
+  width: 98%;
+  color: #ADD8E6;
+background-color: #ADC9E6;
+height: 1px;
+}
+
+.ui-table-columntoggle-btn {
+    display: none !important;
+}
+
+.ui-loader-background {
+width:100%;
+height:100%;
+top:0;
+margin: 0;
+background: rgba(0, 0, 0, 0.5);
+display:none;
+position: fixed;
+z-index:100;
+}
+ 
+.ui-loading .ui-loader-background {
+display:block;
+}
+
+table { 
+  table-layout: fixed;
+  width: 100%
+}
+td {
+
+    /* css-3 */
+    white-space: -o-pre-wrap; 
+    word-wrap: break-word;
+    white-space: pre-wrap; 
+    white-space: -moz-pre-wrap; 
+    white-space: -pre-wrap; 
+
+}

@@ -1,0 +1,3 @@
+CSRF_ENABLED = True
+SECRET_KEY = "bcjkm4kPpYviyA7qjMTwn3ngo3C9LAHui9AfmgHNKeJXv7vbnc7EzMTCUhK3JiJ7"
+
